@@ -90,6 +90,12 @@ VideoPlayer._CanvasGround.prototype.getGround = function() {
     return this.canvas
 }
 
+VideoPlayer._CanvasGround.prototype.fullScreen = function() {
+    if (this.getGround().webkitRequestFullScreen) {
+        this.getGround().webkitRequestFullScreen()
+    }
+}
+
 VideoPlayer.prototype._createPlayGround = function() {
     var ground = new VideoPlayer._CanvasGround()
     return ground
@@ -182,6 +188,12 @@ VideoPlayer.prototype.load = function(data) {
 }
 VideoPlayer.prototype.play = function() {
     this._videoLoader.play()
+}
+VideoPlayer.prototype.pause = function() {
+    this._videoLoader.pause()
+}
+VideoPlayer.prototype.fullScreen = function() {
+    this._playGround.fullScreen()
 }
 VideoPlayer.prototype.setFilter = function(options) {
     this._playGround.setFilter(options)

@@ -24,6 +24,14 @@ window.onload = function() {
         player.play()
     })
 
+    T.on('controls-pause', 'click', function(){
+        player.pause()
+    })
+
+    T.on('controls-full', 'click', function(){
+        player.fullScreen()
+    })
+
     T.on('controls-filter', 'change', function(){
         player.setFilter({
             type: this.value
