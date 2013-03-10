@@ -51,7 +51,10 @@ d3.json("miserables.json", function(error, graph) {
       .style("fill", function(d) { return color(d.group); })
       .call(force.drag);
 
-  node.append("title")
+  node.on('click', function(d) {
+        alert(d.name);
+      })
+      .append("title")
       .text(function(d) { return d.name; });
 
   force.on("tick", function() {
