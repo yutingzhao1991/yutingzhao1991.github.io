@@ -29,12 +29,15 @@ var VideoPlayer = function(options) {
 VideoPlayer._CanvasGround = function() {
     this.canvas = document.createElement('canvas')
     this.context = this.canvas.getContext('2d')
-    this.back = document.createElement('canvas').getContext('2d')
+    this.backCanvas = document.createElement('canvas')
+    this.back = this.backCanvas.getContext('2d')
 }
 
 VideoPlayer._CanvasGround.prototype.setSize = function(data) {
     this.canvas.width = this.width = data.width
     this.canvas.height = this.height = data.height
+    this.backCanvas.width = this.width = data.width
+    this.backCanvas.height = this.height = data.height
 }
 
 VideoPlayer._CanvasGround.prototype.draw = function(content) {
