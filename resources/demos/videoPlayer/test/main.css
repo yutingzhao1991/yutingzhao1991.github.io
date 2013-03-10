@@ -1,0 +1,11 @@
+*{
+	margin: 0;
+	pading: 0;
+}
+
+#video-container{
+    border: 1px solid #ddd;
+    margin: 20px;
+    height: 240px;
+    width: 320px;
+}
