@@ -121,7 +121,6 @@ cursor: auto;
 /* special */
 .item-weixin-image{
 	width: 80%;
-	height: 80%;
 	border: 1px solid rgb(106, 176, 11);
 	box-shadow: 0px 0px 20px rgb(106, 176, 11);
 }
