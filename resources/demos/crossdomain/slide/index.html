@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CORS</title>
+    <style>
+    .logo {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        cursor: pointer;
+    }
+    .logo img {
+        width: 100px;
+    }
+
+    .step {
+        width: 900px;
+        padding: 20px;
+        font-size: 30px;
+
+    }
+    .fallback-message {
+        display: none;
+    }
+    .impress-not-supported .fallback-message {
+        display: block;
+    }
+    .right {
+        float: right;
+    }
+    .red {
+        color: red;
+    }
+    .green {
+        color: green;
+    }
+    .cancle {
+        text-decoration: line-through;
+    }
+    pre {
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        box-shadow: 0px 0px 20px #ddd;
+        padding: 10px;
+    }
+    </style>
+</head>
+<body class="impress-not-supported">
+    <div class="fallback-message">
+        <p>Your browser is not support this</p>
+        <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+    </div>
+
+    <div class="logo" id="all">
+        <img src="./logo.png" alt="">
+    </div>
+
+    <div id="impress">
+        <div class="step" data-x="-1500" data-y="-1000">
+            <p>
+                <h1>来，我们一起跨个域</h1>
+            </p>
+            <p class="right">
+                by 余廷钊
+            </p>
+        </div>
+        <div class="step" data-x="0" data-y="-1000">
+            <p>
+                <h1>什么是跨域问题？</h1>
+            </p>
+            <p>
+                <h2>其实它根本就不是问题</h2>
+            </p>
+        </div>
+        <div class="step" data-x="-500" data-y="0" data-scale="3">
+            <p>
+                <h1>同源策略</h1>
+            </p>
+            <p>
+                <ul>
+                    <li><strong>不同协议</strong>(http/https)</li>
+                    <li><strong>不同主机</strong>(iqiyi.com/qiyi.com)</li>
+                    <li><strong>不同端口</strong>(iqiyi.com:80/iqiyi.com:8080)</li>
+                </ul>
+            </p>
+            <p><strong>http://cupid.qiyi.com:80</strong>/tracking</p>
+        </div>
+        <div class="step" data-x="-500" data-y="1200" data-scale="3">
+            <p class="cancle">跨域</p>
+            <p class="green">跨来源</p>
+            <p>
+                <p class="cancle">A向B发出AJAX请求</p>
+                <p class="cancle">A页面中读取指向B的iframe内容</p>
+            </p>
+            <p>
+                <p>JS / CSS / Image</p>
+                <p>仅仅在A页面中包含指向B的iframe</p>
+            </p>
+        </div>
+        <div class="step" data-x="-500" data-y="2000" data-scale="1">
+            <p>
+                <h1 class="red">Why?</h1>
+            </p>
+        </div>
+        <div class="step" data-x="-500" data-y="4000" data-scale="1">
+            <p>
+                <h1>安全</h1>
+            </p>
+            <p>
+                用户数据 <strong class="red">cookie</strong>
+            </p>
+        </div>
+        <div class="step" data-x="-500" data-y="6000" data-scale="1">
+            <p>
+                <h1>1: HTML5 CORS</h1>
+            </p>
+            <p>
+                <strong>Cross-Orgin Resource Sharing</strong>
+            </p>
+            <p>
+                set header:[Access-Control-Allow-Origin]
+            </p>
+        </div>
+        <div class="step" data-x="-500" data-y="8000" data-scale="1">
+            <p>
+                <h1>2: FLASH</h1>
+            </p>
+        </div>
+        <div class="step" data-x="2000" data-y="0">
+            <p>
+                <h1>3: JS/CSS/IMAGE</h1>
+            </p>
+            <p>
+                <pre>
+    //Ping url with GET
+    Util.pingUrl = function(url) {
+        (new Image(0,0)).src = url;
+    };
+                </pre>
+            </p>
+        </div>
+        <div class="step" data-x="4000" data-y="0">
+            <p>
+                <h1>JSONP</h1>
+            </p>
+            <p>
+                <pre>
+                    
+var script = document.createElement('SCRIPT') ;
+scr.src = 'http://xxx.xxx.xxx/xxx.js';
+document.body.appendChild(script);
+                </pre>
+                <pre>
+// response as a var 
+responseVar = {...};
+//or response to a function
+respnseFun({...});
+                </pre>
+            </p>
+        </div>
+        <div class="step" data-x="2000" data-y="2000">
+            <p>
+                <h1>iframe</h1>
+            </p>
+            <p>
+                <img src="./iframe.png" alt="">
+            </p>
+        </div>
+        <div class="step" data-x="4000" data-y="2000">
+            <p>
+                window.name
+            </p>
+            <p>
+                <img src="./windowname.png" alt="">
+            </p>
+        </div>
+        <div class="step" data-x="6000" data-y="2000">
+            <p>
+                第三个代理页面?data=xxxxxx
+            </p>
+            <p>
+                <img src="./proxy.png" alt="">
+            </p>
+        </div>
+        <div class="step" data-x="2000" data-y="4000">
+            <p>
+                <h1 class="green">THANKS</h1>
+            </p>
+        </div>
+        <div id="overview" class="step" data-x="3000" data-y="1500" data-scale="10">
+        </div>
+    </div>
+    <script type="text/javascript" src="../../../libs/impress/js/impress.js"></script>
+    <script type="text/javascript">
+    var api = impress();
+    api.init();
+    document.getElementById('all').addEventListener('click', function() {
+        api.goto('overview');
+    });
+    </script>
+</body>
+</html>
