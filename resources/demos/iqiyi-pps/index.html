@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>广告效果分析系统</title>
+    <link rel="shortcut icon" type="image/ico" href="./favicon.ico" />
+    <style>
+    html {
+        height: 100%;
+        width: 100%;
+        background: #f2f2f2;
+        font: 400 14px/18px "Microsoft YaHei", "Arial", "宋体";
+        overflow: hidden;
+    }
+    body {
+        margin: 0px;
+        padding: 0px;
+    }
+    .unit {
+        opacity: .8;
+        width: 350px;
+        height: 240px;
+        color: #fff;
+        font-size: 18px;
+        display: block;
+        position: absolute;
+        top: 20%;
+    }
+    .unit:hover {
+        opacity: 1;
+        z-index: 3;
+    }
+    .iqiyi {
+        background: url(./iqiyi.png);
+        left: 0px;
+        margin-left: -330px;
+    }
+    .pps {
+        background: url(./pps.png);
+        right: 0px;
+        margin-right: -330px;
+    }
+    h1 {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-left: -100px;
+        opacity: 0;
+    }
+
+    /* footer */
+    .footer {
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        margin: auto 0;
+        line-height: 20px;
+        text-align: center;
+        padding: 0 0 20px;
+        clear: both;
+        background: 0;
+        color: #999;
+        font-size: 12px;
+        color: #999;
+    }
+    .footer .footmenu {
+        padding-top: 9px;
+        padding-bottom: 3px;
+    }
+    .footer a {
+        padding-left: 10px;
+        padding-right: 8px;
+        text-decoration: none;
+        outline: 0;
+        color: #6b6b6b;
+    }
+    .footer a:hover {
+        color: #4c7d08;
+        text-decoration: underline;
+    }
+    .fen{font-family:Arial;color:#939393;}
+    /* footer end */
+    </style>
+</head>
+<body>
+    <a class="pps unit" id="pps" title="点击访问PPS" href="http://pps.tv"></a>
+    <a class="iqiyi unit" id="iqiyi" title="点击访问iQiYi" href="http://iqiyi.com"></a>
+    <h1 id="title">在一起，更好看！</h1>
+    <div class="footer">
+            <p class="footmenu">
+                <a href="http://iqiyi.com">iQiYi.com</a>
+                <a href="http://pps.tv">PPS.tv</a>
+            </p>
+            <p class="fEn">
+                <a class="link0" href="http://yutingzhao.com">余廷钊</a>&nbsp;&nbsp;© yutingzhao.com
+            </p>
+        </div>
+    <script type="text/javascript" src="./jquery-1.8.2.min.js"></script>
+    <script type="text/javascript" src="./jstween-1.1.min.js"></script>
+    <script type="text/javascript">
+    $(function() {
+        var onTweenStopFlag = 0;
+        var onTweenStop = function(){
+            onTweenStopFlag ++;
+            if (onTweenStopFlag >= 2) {
+                // together
+                $('#title').tween({
+                    opacity: {
+                        start: 0,
+                        stop: 100,
+                        time: 0,
+                        duration: 1,
+                        units: '%'
+                    }
+                });
+                $.play();
+            }
+        };
+        $('#iqiyi').tween({
+            left:{
+              start: 0,
+              stop: 50,
+              time: 0,
+              duration: 1,
+              units: '%',
+              effect: 'easeInOut',
+              onStop: function(){
+                onTweenStop();
+              }
+           }
+        });
+        $('#pps').tween({
+            right:{
+              start: 0,
+              stop: 50,
+              time: 0,
+              duration: 1,
+              units: '%',
+              effect: 'easeInOut',
+              onStop: function(){
+                onTweenStop();
+              }
+           }
+        });
+        $.play();
+    });
+    </script>
+</body>
+</html>
