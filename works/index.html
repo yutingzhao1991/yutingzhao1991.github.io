@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>作品演示</title>
+  <link rel="stylesheet" href="http://apps.bdimg.com/libs/bootstrap/3.3.4/css/bootstrap.min.css">
+  <style>
+  .item {
+    width: 380px;
+    height: 280px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    margin: 10px 10px 10px 0;
+    padding: 5px;
+    display: inline-block;
+    overflow: hidden;
+  }
+  .item h3 {
+    margin-top: 5px;
+  }
+  .item .image {
+    background-color: #eee;
+    height: 180px;
+    text-align: center;
+    line-height: 180px;
+    font-size: 60px;
+  }
+  .item .description {
+    line-height: 20px;
+    font-size: 10px;
+    color: #777;
+    margin-top: 5px;
+  }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>作品展示</h1>
+    <ul id="myTabs" class="nav nav-tabs" role="tablist">
+      <li role="presentation" class="active"><a href="#visualization" role="tab" id="profile-tab" data-toggle="tab" aria-controls="visualization" aria-expanded="false">数据可视化</a></li>
+      <li role="presentation"><a href="#game" role="tab" id="profile-tab" data-toggle="tab" aria-controls="game" aria-expanded="false">游戏</a></li>
+      <!--<li role="presentation" class="dropdown">
+        <a href="#" id="myTabDrop1" class="dropdown-toggle" data-toggle="dropdown" aria-controls="myTabDrop1-contents" aria-expanded="false">数据可视化 <span class="caret"></span></a>
+        <ul class="dropdown-menu" aria-labelledby="myTabDrop1" id="myTabDrop1-contents">
+          <li><a href="#dropdown1" role="tab" id="dropdown1-tab" data-toggle="tab" aria-controls="dropdown1">D3</a></li>
+          <li><a href="#dropdown2" role="tab" id="dropdown2-tab" data-toggle="tab" aria-controls="dropdown2">TODO</a></li>
+        </ul>
+      </li>-->
+      <li role="presentation"><a href="#others" id="home-tab" role="tab" data-toggle="tab" aria-controls="others" aria-expanded="true">其他</a></li>
+    </ul>
+    <div id="myTabContent" class="tab-content">
+      <div role="tabpanel" class="tab-pane fade active in" id="visualization" aria-labelledby="visualization-tab">
+      </div>
+      <div role="tabpanel" class="tab-pane fade in" id="game" aria-labelledby="game-tab">
+      </div>
+      <div role="tabpanel" class="tab-pane fade in" id="others" aria-labelledby="others-tab">
+      </div>
+    </div>
+  </div>
+  <script src="http://apps.bdimg.com/libs/underscore.js/1.7.0/underscore-min.js"></script>
+  <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="http://apps.bdimg.com/libs/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
