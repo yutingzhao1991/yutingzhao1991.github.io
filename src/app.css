@@ -12,8 +12,21 @@ body {
   overflow: hidden;
 }
 
+a:hover {
+  color: #4aa9e9;
+}
 a {
+  transition: color .3s ease;
   text-decoration: none;
+}
+
+.footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  font-size: 12px;
+  padding: 10px;
+  color: #333;
 }
 
 @keyframes bg-run {
