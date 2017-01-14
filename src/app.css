@@ -77,6 +77,9 @@ a:hover {
   background: #fff;
   box-shadow: 0 2px 3px rgba(0,0,0,0.3);
 }
+.content {
+  overflow: auto;
+}
 .content img {
   display: block;
   max-width: 100%;
