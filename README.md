@@ -1,3 +1,3 @@
 my personal website
 
-http://yutingzhao.com
+http://yutingzhao1991.github.io
