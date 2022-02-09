@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>我是冰墩墩</title>
+</head>
+
+<body>
+  <div style="margin: 30px auto;text-align: center;">
+    <div id="item1">点我</div>
+    <div id="item2" style="display: none;"><img
+        src="https://gw.alipayobjects.com/mdn/rms_b40165/afts/img/A*KtAzSZq8VLYAAAAAAAAAAAAAARQnAQ"></div>
+    <div id="item3" style="display: none;">小年糕，我爱你————愚指导</div>
+  </div>
+
+  <script>
+    document.getElementById('item1').addEventListener('click', () => {
+      document.getElementById('item2').style.display = 'block';
+      document.getElementById('item1').style.display = 'none';
+    });
+    document.getElementById('item2').addEventListener('click', () => {
+      document.getElementById('item3').style.display = 'block';
+      document.getElementById('item2').style.display = 'none';
+    });
+  </script>
+</body>
+
+</html>
