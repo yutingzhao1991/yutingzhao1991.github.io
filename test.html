@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Size Test</title>
+</head>
+
+<body>
+  <div id="width">window.innerWidth</div>
+  <div id="height">window.innerHeight</div>
+  <script>
+    updateSize();
+    function updateSize() {
+      document.getElementById('width').innerHTML = 'window.innerWidth:' + window.innerWidth;
+      document.getElementById('height').innerHTML = 'window.innerHeight:' + window.innerHeight;
+    }
+    window.onresize = function () {
+      updateSize();
+    }
+  </script>
+</body>
+
+</html>
